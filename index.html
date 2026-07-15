@@ -780,7 +780,7 @@
         lead.classList.add("is-leader");
         var badge = document.createElement("span");
         badge.className = "leader-badge";
-        badge.textContent = "★ Most creative";
+        badge.innerHTML = "&#9733; Most creative";
         lead.appendChild(badge);
       }
     }
@@ -802,7 +802,7 @@
       vb.className = "votebtn";
       vb.type = "button";
       vb.setAttribute("aria-pressed", "false");
-      vb.innerHTML = '<span class="vi" aria-hidden="true">✗</span> Vote <b>' + v.toLocaleString() + "</b>";
+      vb.innerHTML = '<span class="vi" aria-hidden="true">&#10007;</span> Vote <b>' + v.toLocaleString() + "</b>";
       vb.addEventListener("click", function () {
         var voted = card.classList.toggle("voted");
         var cur = parseInt(card.dataset.votes, 10) + (voted ? 1 : -1);
