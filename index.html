@@ -272,6 +272,34 @@
   @keyframes flash { from { background: rgba(232,73,44,0.24); } to { background: transparent; } }
   @media (prefers-reduced-motion: reduce) { .roster-list li.just-signed { animation: none; } }
 
+  /* live dot on the signatures metric */
+  .tally-label .pulse { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--sign-red);
+    margin-right: 7px; vertical-align: middle; animation: pulse 1.6s infinite; }
+  @media (prefers-reduced-motion: reduce) { .tally-label .pulse { animation: none; } }
+
+  /* ============ ENTRY VOTING + SORT ============ */
+  .sort { display: flex; gap: 8px; flex: none; }
+  .sortbtn { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em;
+    padding: 8px 13px; border: 1.5px solid var(--line); border-radius: 2px; background: transparent; color: var(--ink); cursor: pointer; transition: all .12s ease; }
+  .sortbtn:hover { border-color: var(--ink); }
+  .sortbtn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .votebtn { margin-top: 15px; width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;
+    padding: 10px 12px; border: 2px solid var(--ink); border-radius: 3px; background: var(--paper); color: var(--ink);
+    cursor: pointer; box-shadow: 3px 3px 0 var(--ink); transition: transform .07s ease, box-shadow .07s ease, background .1s ease; }
+  .votebtn .vi { color: var(--green); font-size: 14px; }
+  .votebtn b { font-weight: 800; font-variant-numeric: tabular-nums; }
+  .votebtn:hover { background: var(--paper-2); }
+  .votebtn:active { transform: translate(3px,3px); box-shadow: 0 0 0 var(--ink); }
+  .card.voted .votebtn { background: var(--green); color: var(--sign-cream); }
+  .card.voted .votebtn .vi { color: var(--sign-cream); }
+  .card.is-leader { border-color: var(--sign-red); box-shadow: 6px 6px 0 var(--sign-red); }
+  .card.is-leader:hover { box-shadow: 9px 9px 0 var(--sign-red); }
+  .leader-badge { position: absolute; top: -12px; left: 16px; font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; background: var(--sign-red); color: var(--sign-cream);
+    border: 2px solid var(--ink); border-radius: 3px; padding: 3px 8px; }
+
   /* ============ THE WALL ============ */
   .wall { background: var(--paper-2); border-top: 5px solid var(--ink); padding: 80px 0 90px; }
   .wall-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 8px; }
@@ -365,34 +393,34 @@
       <a class="wordmark" href="#top"><span class="ballot-x" aria-hidden="true">&#10007;</span>Vote&nbsp;Marketing</a>
       <nav class="topnav" aria-label="Primary">
         <a href="#manifesto">The Platform</a>
-        <a href="#wall">The Record</a>
-        <a href="#sign">Cast a Vote</a>
+        <a href="#wall">The Entries</a>
+        <a href="#sign">Sign</a>
       </nav>
     </div>
 
-    <p class="eyebrow"><span class="dot" aria-hidden="true"></span>The polls are open &middot; Nov of every quarter</p>
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span>The polls are open &middot; vote for the best marketing there is</p>
 
     <h1 class="warcry">Let Marketing<span class="low">Cook.</span></h1>
 
-    <p class="subhead">A campaign for every marketer whose work an agent can&rsquo;t replicate. <b>Cast your vote. Then run on your record.</b></p>
+    <p class="subhead">A campaign for every marketer whose work an agent can&rsquo;t replicate. <b>Sign the manifesto. Run on your record. Vote for the best.</b></p>
 
     <div class="cta-row" id="join">
-      <a class="btn btn-primary" href="#sign">Cast Your Vote</a>
+      <a class="btn btn-primary" href="#sign">Join The Campaign</a>
       <a class="btn btn-ghost" href="#wall">Run On Your Record</a>
     </div>
 
     <div class="tally">
       <div class="tally-item">
         <span class="tally-num" data-count="2847">0</span>
-        <span class="tally-label">Votes cast</span>
+        <span class="tally-label"><span class="pulse" aria-hidden="true"></span>Signatures</span>
       </div>
       <div class="tally-item">
         <span class="tally-num" data-count="639">0</span>
-        <span class="tally-label">Records on the wall</span>
+        <span class="tally-label">Entries submitted</span>
       </div>
       <div class="tally-item">
-        <span class="tally-num tally-live"><span class="pulse" aria-hidden="true"></span>Live</span>
-        <span class="tally-label">Counting since launch</span>
+        <span class="tally-num" data-count="11204">0</span>
+        <span class="tally-label">Votes on entries</span>
       </div>
     </div>
   </div>
@@ -420,17 +448,21 @@
 
       <div class="ask">
         <div class="ask-col">
-          <p class="ask-verb"><span class="n">01</span>Cast your vote</p>
-          <p>Put your name on the ballot. Ten seconds, and you&rsquo;re on the record with the rest of us.</p>
+          <p class="ask-verb"><span class="n">01</span>Sign the manifesto</p>
+          <p>Add your name and you&rsquo;re in the campaign. Ten seconds, standing with the rest of us.</p>
         </div>
         <div class="ask-col">
           <p class="ask-verb"><span class="n">02</span>Run on your record</p>
-          <p>Tell us the win, the bet, the campaign that worked. Anonymous or out loud. Both count.</p>
+          <p>Submit your entry &mdash; the win, the bet, the campaign that worked. Anonymous or out loud.</p>
+        </div>
+        <div class="ask-col">
+          <p class="ask-verb"><span class="n">03</span>Vote for the best</p>
+          <p>Back the entries you think are the most creative. The best human work rises to the top.</p>
         </div>
       </div>
 
       <div class="cta-row">
-        <a class="btn btn-red" href="#sign">Cast Your Vote</a>
+        <a class="btn btn-red" href="#sign">Join The Campaign</a>
         <a class="btn btn-ink" href="#wall">Run On Your Record</a>
       </div>
 
@@ -451,8 +483,8 @@
 <section class="ballot" id="sign">
   <div class="wrap">
     <div class="ballot-form-card">
-      <h2>Add your name to the ballot.</h2>
-      <p class="sub">Cast your vote &middot; 10 seconds &middot; you&rsquo;re on the record</p>
+      <h2>Sign it. You&rsquo;re in.</h2>
+      <p class="sub">Sign the manifesto &rarr; join the campaign &middot; 10 seconds</p>
       <form id="signForm" novalidate>
         <div class="field-row">
           <div class="field"><label for="fn">First name</label><input id="fn" name="fn" required autocomplete="given-name"></div>
@@ -460,15 +492,15 @@
         </div>
         <div class="field"><label for="ti">Title</label><input id="ti" name="ti" placeholder="VP Marketing" required autocomplete="organization-title"></div>
         <div class="field"><label for="co">Company</label><input id="co" name="co" placeholder="Where you run on your record" required autocomplete="organization"></div>
-        <button class="ballot-submit" type="submit">&#10007;&nbsp; Cast My Vote</button>
-        <p class="ballot-fine">Public by default. In the real thing you&rsquo;d confirm by email before your name counts &mdash; this is a live demo, so it won&rsquo;t save.</p>
+        <button class="ballot-submit" type="submit">&#10007;&nbsp; Sign &amp; Join The Campaign</button>
+        <p class="ballot-fine">Public by default. In the real thing you&rsquo;d confirm by email before your signature counts &mdash; this is a live demo, so it won&rsquo;t save.</p>
       </form>
     </div>
 
     <div class="roster">
       <div class="roster-head">
-        <h3>On the ballot</h3>
-        <span class="roster-count"><span id="rosterCount">2,847</span> voters &amp; counting</span>
+        <h3>Who&rsquo;s in</h3>
+        <span class="roster-count"><span id="rosterCount">2,847</span> signatures &amp; counting</span>
       </div>
       <ul class="roster-list" id="rosterList">
         <li><span class="ravatar">PN</span><span class="rmeta"><b>Priya Nair</b><br><span>VP Marketing &middot; Rowshift</span></span><span class="rnum">#2847</span></li>
@@ -493,8 +525,14 @@
 <section class="wall" id="wall">
   <div class="wrap">
     <div class="wall-head">
-      <h2 class="wall-title">Run on your record.</h2>
-      <p class="wall-sub">639 wins filed &middot; sorted newest first</p>
+      <div>
+        <h2 class="wall-title">Vote for the best.</h2>
+        <p class="wall-sub">639 entries on the ballot &middot; back the most creative</p>
+      </div>
+      <div class="sort" role="group" aria-label="Sort entries">
+        <button class="sortbtn active" type="button" data-sort="new">Newest</button>
+        <button class="sortbtn" type="button" data-sort="creative">Most voted</button>
+      </div>
     </div>
 
     <div class="filters" role="group" aria-label="Filter the record by topic">
@@ -517,7 +555,7 @@
 
       <article class="card anon" data-topic="creative">
         <div class="card-top"><span class="topic">Creative Campaign</span><span class="ballot-no">Ballot #0012</span></div>
-        <span class="stamp">Cast in private</span>
+        <span class="stamp">Filed anonymously</span>
         <h3>I ran the ad everyone hated.</h3>
         <p>The whole GTM team wanted the safe one. I shipped the weird one&mdash;the one that made legal call. It&rsquo;s the reason we hit the number, and nobody&rsquo;s asked me to &ldquo;run it by committee&rdquo; since.</p>
         <div class="byline"><div class="avatar">&#10007;</div><div class="who"><b><span class="redact">Ballot cast</span></b><br><span>Head of Brand &middot; <span class="redact">private</span></span></div></div>
@@ -557,12 +595,12 @@
 <section class="milestone">
   <div class="wrap">
     <div class="ms-left">
-      <p class="ms-kicker">Next election night</p>
-      <h2 class="ms-title">5,000 votes and we read the record out loud.</h2>
+      <p class="ms-kicker">The campaign so far</p>
+      <h2 class="ms-title">2,847 signed. Next stop: 5,000 marketers who refuse to be an afterthought.</h2>
     </div>
     <div class="ms-right">
-      <div class="progress" role="img" aria-label="2,847 of 5,000 votes cast, 57 percent"><div class="progress-fill"></div></div>
-      <div class="progress-meta"><span>2,847 cast</span><span>57%</span><span>goal 5,000</span></div>
+      <div class="progress" role="img" aria-label="2,847 of 5,000 signatures, 57 percent"><div class="progress-fill"></div></div>
+      <div class="progress-meta"><span>2,847 signed</span><span>57%</span><span>goal 5,000</span></div>
     </div>
   </div>
 </section>
@@ -685,14 +723,85 @@
         if (voteTally) voteTally.textContent = n;
 
         btn.classList.add("done");
-        btn.innerHTML = "&#10003;&nbsp; You&rsquo;re on the ballot, #" + ballot;
+        btn.innerHTML = "&#10003;&nbsp; You&rsquo;re in &mdash; signature #" + ballot;
         form.reset();
         if (!reduce) li.scrollIntoView({ behavior: "smooth", block: "nearest" });
         setTimeout(function () {
           btn.classList.remove("done");
-          btn.innerHTML = "&#10007;&nbsp; Cast My Vote";
+          btn.innerHTML = "&#10007;&nbsp; Sign &amp; Join The Campaign";
         }, 3200);
       });
     }
+
+    // vote on entries (demo) + sort + "most creative" leader
+    var grid = document.getElementById("cardgrid");
+    var voteTally = document.querySelector('.tally-num[data-count="11204"]');
+    var totalVotes = 11204;
+    var entryCards = Array.prototype.slice.call(document.querySelectorAll("#cardgrid .card"));
+    var seedVotes = [128, 342, 96, 511, 233, 274];
+    var currentSort = "new";
+
+    function markLeader() {
+      var lead = null, max = -1;
+      entryCards.forEach(function (c) {
+        var v = parseInt(c.dataset.votes, 10);
+        if (v > max) { max = v; lead = c; }
+      });
+      entryCards.forEach(function (c) {
+        c.classList.remove("is-leader");
+        var b = c.querySelector(".leader-badge");
+        if (b) b.parentNode.removeChild(b);
+      });
+      if (lead) {
+        lead.classList.add("is-leader");
+        var badge = document.createElement("span");
+        badge.className = "leader-badge";
+        badge.textContent = "★ Most creative";
+        lead.appendChild(badge);
+      }
+    }
+    function applySort() {
+      var arr = entryCards.slice();
+      if (currentSort === "creative") {
+        arr.sort(function (a, b) { return parseInt(b.dataset.votes, 10) - parseInt(a.dataset.votes, 10); });
+      } else {
+        arr.sort(function (a, b) { return (+a.dataset.order) - (+b.dataset.order); });
+      }
+      arr.forEach(function (c) { grid.appendChild(c); });
+    }
+
+    entryCards.forEach(function (card, i) {
+      var v = seedVotes[i] != null ? seedVotes[i] : 100;
+      card.dataset.votes = v;
+      card.dataset.order = i;
+      var vb = document.createElement("button");
+      vb.className = "votebtn";
+      vb.type = "button";
+      vb.setAttribute("aria-pressed", "false");
+      vb.innerHTML = '<span class="vi" aria-hidden="true">✗</span> Vote <b>' + v.toLocaleString() + "</b>";
+      vb.addEventListener("click", function () {
+        var voted = card.classList.toggle("voted");
+        var cur = parseInt(card.dataset.votes, 10) + (voted ? 1 : -1);
+        card.dataset.votes = cur;
+        totalVotes += voted ? 1 : -1;
+        vb.querySelector("b").textContent = cur.toLocaleString();
+        vb.setAttribute("aria-pressed", voted ? "true" : "false");
+        if (voteTally) voteTally.textContent = totalVotes.toLocaleString();
+        markLeader();
+        if (currentSort === "creative") applySort();
+      });
+      card.appendChild(vb);
+    });
+
+    document.querySelectorAll(".sortbtn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        document.querySelectorAll(".sortbtn").forEach(function (x) { x.classList.remove("active"); });
+        b.classList.add("active");
+        currentSort = b.dataset.sort;
+        applySort();
+      });
+    });
+
+    markLeader();
   })();
 </script>
