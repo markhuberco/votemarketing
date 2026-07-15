@@ -302,6 +302,12 @@
     text-transform: uppercase; letter-spacing: 0.08em; background: var(--sign-red); color: var(--sign-cream);
     border: 2px solid var(--ink); border-radius: 3px; padding: 3px 8px; }
 
+  /* ============ HOW IT WORKS ============ */
+  .howto { padding: 60px 0; border-bottom: 5px solid var(--ink); background: var(--paper-2); }
+  .howto .wrap { max-width: var(--maxw); }
+  .howto .ask { margin: 22px 0 0; }
+  .roster-list .rmeta .founder-tag { color: var(--green); font-weight: 700; }
+
   /* ============ THE WALL ============ */
   .wall { background: var(--paper-2); border-top: 5px solid var(--ink); padding: 80px 0 90px; }
   .wall-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 8px; }
@@ -434,6 +440,26 @@
   </div>
 </div>
 
+<section class="howto" id="how">
+  <div class="wrap">
+    <p class="sec-label">How the campaign works</p>
+    <div class="ask">
+      <div class="ask-col">
+        <p class="ask-verb"><span class="n">01</span>Sign the manifesto</p>
+        <p>Add your name and you&rsquo;re in the campaign. Ten seconds, standing with the rest of us.</p>
+      </div>
+      <div class="ask-col">
+        <p class="ask-verb"><span class="n">02</span>Run on your record</p>
+        <p>Submit your entry &mdash; the win, the bet, the campaign that worked. Anonymous or out loud.</p>
+      </div>
+      <div class="ask-col">
+        <p class="ask-verb"><span class="n">03</span>Vote for the best</p>
+        <p>Back the entries you think are the most creative. The best human work rises to the top.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="manifesto" id="manifesto">
   <div class="wrap">
     <p class="sec-label">The Platform &middot; Sign to endorse</p>
@@ -447,26 +473,6 @@
       <p class="plank">Driven by the tools. Led by taste. No model has ever sat across from a customer and felt the exact second a story lands.</p>
 
       <p>So no, we&rsquo;re not defending the function. The function is doing fine. We&rsquo;re running on it, loudly, in public, until the ballot is too long to argue with. This is for every marketer who refuses to be an afterthought&mdash;team, IC, or leader. Not because you&rsquo;re scared of becoming one. Because you were never going to be one.</p>
-
-      <div class="ask">
-        <div class="ask-col">
-          <p class="ask-verb"><span class="n">01</span>Sign the manifesto</p>
-          <p>Add your name and you&rsquo;re in the campaign. Ten seconds, standing with the rest of us.</p>
-        </div>
-        <div class="ask-col">
-          <p class="ask-verb"><span class="n">02</span>Run on your record</p>
-          <p>Submit your entry &mdash; the win, the bet, the campaign that worked. Anonymous or out loud.</p>
-        </div>
-        <div class="ask-col">
-          <p class="ask-verb"><span class="n">03</span>Vote for the best</p>
-          <p>Back the entries you think are the most creative. The best human work rises to the top.</p>
-        </div>
-      </div>
-
-      <div class="cta-row">
-        <a class="btn btn-red" href="#sign">Join The Campaign</a>
-        <a class="btn btn-ink" href="#wall">Run On Your Record</a>
-      </div>
 
       <p class="signoff"><span class="g">Long live marketers.</span> The polls are open. Come run.</p>
 
@@ -527,9 +533,9 @@
         <li><span class="ravatar">NV</span><span class="rmeta"><b>Nina Vasquez</b><br><span>Field Marketing &middot; Harbor</span></span><span class="rnum">#2839</span></li>
         <li><span class="ravatar">EG</span><span class="rmeta"><b>Eli Grant</b><br><span>Head of Content &middot; Junegrass</span></span><span class="rnum">#2838</span></li>
         <li><span class="ravatar">RL</span><span class="rmeta"><b>Rachel Lin</b><br><span>Product Marketing &middot; Sundial</span></span><span class="rnum">#2837</span></li>
-        <li><span class="ravatar" style="background:var(--ink)">A</span><span class="rmeta"><b>Algert</b> <span>&middot; Founder</span><br><span>Creative Agency &middot; brought to you by</span></span><span class="rnum">#003</span></li>
-        <li><img class="ravatar" src="mark.jpg" alt="Mark Huber"><span class="rmeta"><b>Mark Huber</b> <span>&middot; Founder</span><br><span>Founder, MARKeting</span></span><span class="rnum">#002</span></li>
-        <li><img class="ravatar" src="kyle.jpg" alt="Kyle Lacy"><span class="rmeta"><b>Kyle Lacy</b> <span>&middot; Founder</span><br><span>CMO, Docebo</span></span><span class="rnum">#001</span></li>
+        <li><span class="ravatar" style="background:var(--ink)">A</span><span class="rmeta"><b>Algert</b> <span class="founder-tag">&middot; Founding Agency</span><br><span>Creative &middot; brought to you by</span></span><span class="rnum">#003</span></li>
+        <li><img class="ravatar" src="mark.jpg" alt="Mark Huber"><span class="rmeta"><b>Mark Huber</b> <span class="founder-tag">&middot; Founding Marketer</span><br><span>Founder, MARKeting</span></span><span class="rnum">#002</span></li>
+        <li><img class="ravatar" src="kyle.jpg" alt="Kyle Lacy"><span class="rmeta"><b>Kyle Lacy</b> <span class="founder-tag">&middot; Founding Marketer</span><br><span>CMO, Docebo</span></span><span class="rnum">#001</span></li>
       </ul>
     </div>
   </div>
