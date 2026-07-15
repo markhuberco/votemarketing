@@ -302,10 +302,14 @@
     text-transform: uppercase; letter-spacing: 0.08em; background: var(--sign-red); color: var(--sign-cream);
     border: 2px solid var(--ink); border-radius: 3px; padding: 3px 8px; }
 
-  /* ============ HOW IT WORKS ============ */
-  .howto { padding: 60px 0; border-bottom: 5px solid var(--ink); background: var(--paper-2); }
-  .howto .wrap { max-width: var(--maxw); }
-  .howto .ask { margin: 22px 0 0; }
+  /* ============ RUN ON YOUR RECORD (SUBMIT) ============ */
+  .enter { padding: 78px 0 84px; border-top: 5px solid var(--ink); background: var(--paper); }
+  .enter .wrap { max-width: 920px; }
+  .enter-title { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em;
+    font-size: clamp(30px, 5.4vw, 52px); line-height: 0.95; margin: 14px 0 18px; text-wrap: balance; }
+  .enter-lede { font-family: var(--font-serif); font-size: clamp(18px, 2.3vw, 22px); line-height: 1.5; max-width: 62ch; margin: 0; }
+  .enter-lede b { font-weight: inherit; background: linear-gradient(transparent 58%, rgba(23,138,70,0.32) 58%); }
+  .enter .ask { margin: 32px 0 28px; }
   .roster-list .rmeta .founder-tag { color: var(--green); font-weight: 700; }
 
   /* ============ THE WALL ============ */
@@ -439,26 +443,6 @@
     <span>Long Live Marketers</span><span class="star">&#10007;</span><span>The Polls Are Open</span><span class="star">&#10007;</span><span>Run On Your Record</span><span class="star">&#10007;</span><span>Driven By The Tools, Led By Taste</span><span class="star">&#10007;</span><span>Let Marketing Cook</span><span class="star">&#10007;</span><span>I Signed It</span><span class="star">&#10007;</span><span>Long Live Marketers</span><span class="star">&#10007;</span><span>The Polls Are Open</span><span class="star">&#10007;</span><span>Run On Your Record</span><span class="star">&#10007;</span><span>Driven By The Tools, Led By Taste</span><span class="star">&#10007;</span><span>Let Marketing Cook</span><span class="star">&#10007;</span><span>I Signed It</span><span class="star">&#10007;</span>
   </div>
 </div>
-
-<section class="howto" id="how">
-  <div class="wrap">
-    <p class="sec-label">How the campaign works</p>
-    <div class="ask">
-      <div class="ask-col">
-        <p class="ask-verb"><span class="n">01</span>Sign the manifesto</p>
-        <p>Add your name and you&rsquo;re in the campaign. Ten seconds, standing with the rest of us.</p>
-      </div>
-      <div class="ask-col">
-        <p class="ask-verb"><span class="n">02</span>Run on your record</p>
-        <p>Submit your entry &mdash; the win, the bet, the campaign that worked. Anonymous or out loud.</p>
-      </div>
-      <div class="ask-col">
-        <p class="ask-verb"><span class="n">03</span>Vote for the best</p>
-        <p>Back the entries you think are the most creative. The best human work rises to the top.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="manifesto" id="manifesto">
   <div class="wrap">
@@ -607,6 +591,27 @@
         <p>No pastel gradient. No &ldquo;AI-powered.&rdquo; We named the thing our customers actually call us behind our backs and put it on the homepage. Sales cycle dropped 20 days because prospects showed up already sold.</p>
         <div class="byline"><div class="avatar">RC</div><div class="who"><b>Ruth Calloway</b><br><span>CMO &middot; Meridian</span></div></div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="enter" id="enter">
+  <div class="wrap">
+    <p class="sec-label">Run on your record</p>
+    <h2 class="enter-title">Got a play worth spotlighting?</h2>
+    <p class="enter-lede">We&rsquo;re collecting the boldest, most creative marketing there is &mdash; the bet that paid off, the campaign people still quote, the swing nobody else would take &mdash; and putting a <b>spotlight on the best of it</b>. Submit yours in about two minutes. Put your name on it, or file it anonymously. Both count the same.</p>
+    <div class="ask">
+      <div class="ask-col">
+        <p class="ask-verb"><span class="n">01</span>Submit your entry</p>
+        <p>Give it a headline, tell the story in a few lines, and pick a topic. Sign it with your name and company &mdash; or file it anonymously. A human reads every entry before it goes on the wall.</p>
+      </div>
+      <div class="ask-col">
+        <p class="ask-verb"><span class="n">02</span>The best get voted up</p>
+        <p>Every entry lands on the ballot. Marketers vote for the ones they think are the most creative, the top plays rise, and we spotlight them &mdash; in the feed, in Story of the Week, and eventually in print.</p>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-red" href="#wall">Run On Your Record</a>
     </div>
   </div>
 </section>
